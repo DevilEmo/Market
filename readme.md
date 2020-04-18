@@ -1,9 +1,8 @@
 how to use
+create database "market"
+ 
+run this command.
+"composer install"
+"npm install"
 
-install composer and npm
-
-composer install
-npm install
-
-create database named
-gleent_shop
+"php artisan serve"
