@@ -4662,7 +4662,9 @@ input[type=button].btn-block {
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active {
-  color: rgba(0, 0, 0, 0.9);
+  /* color: rgba(0, 0, 0, 0.9); */
+  color:var(--green)
+
 }
 
 .navbar-light .navbar-toggler {
@@ -5934,7 +5936,7 @@ a.close.disabled {
 
 .modal {
   position: fixed;
-  top: 0;
+  top: 60px;
   left: 0;
   z-index: 1050;
   display: none;
@@ -5942,6 +5944,8 @@ a.close.disabled {
   height: 100%;
   overflow: hidden;
   outline: 0;
+
+
 }
 
 .modal-dialog {
@@ -6028,7 +6032,8 @@ a.close.disabled {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1040;
+  /* z-index: 1040; */
+  z-index: -1;
   width: 100vw;
   height: 100vh;
   background-color: #000;

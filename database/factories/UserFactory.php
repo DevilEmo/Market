@@ -16,12 +16,18 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(stallowner::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'address' => $faker->address,
+        'birthday' => $faker->date,
+        'class' => $faker->randomElement($array=array('A','B','C')),
+        'stall_number' => Str::random(2),
+        'profile_image' => 'stallowner5debec7b0bdf4071219.png',
+        'date_of_contract' => now(),
+        'renewal_date' => now(),
+        'payment' => $faker->randomElement($array=array('Paid','Unpaid')),
         'remember_token' => Str::random(10),
     ];
 });

@@ -19,8 +19,9 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('users-component', require('./components/Users.vue').default);
-Vue.component('pos-component', require('./components/Pos.vue').default);
+// Vue.component('parkingrecords-component', require('./components/ParkingRecords.vue').default);
+// Vue.component('stallowner-component', require('./components/StallOwnerList.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -29,4 +30,9 @@ Vue.component('pos-component', require('./components/Pos.vue').default);
 
 const app = new Vue({
     el: '#app',
+    methods:{
+        printme() {
+            window.print();
+        }
+    }
 });

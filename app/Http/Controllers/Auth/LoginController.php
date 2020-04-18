@@ -26,10 +26,10 @@ class LoginController extends Controller
      * @var string
      */
     protected function authenticated($request, $user){
-    if ( $user->email === 'admin@admin' ) {
-        return redirect('/admin');
-    }
-    return redirect('/home');
+    if ( $user->account_type === 'admin') {
+        return redirect('/admin/stall_owner_list');
+    }else
+        return redirect('/cashier/rent_payment');
     }
     /**
      * Create a new controller instance.

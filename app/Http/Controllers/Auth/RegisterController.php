@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use App\Rules\ValidUser;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -35,10 +36,10 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
 
     /**
@@ -64,10 +65,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $request = request();
+        //profile image
+        $profile_image = $request->file('profile_image');
+        $profile_image_name = null;
+        if ($profile_image != null) {
+            $profile_image_name = 'profile_image'.uniqid().date('dmy').'.'.$profile_image->getClientOriginalExtension();
+            $success = $profile_image->move('images/profile_images',$profile_image_name);         
+        }
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'account_type' => $data['account_type'],
+            'birthday' => $data['birthday'],
+            'address' => $data['address'],
+            'position' => $data['position'],
+            'profile_image' => $profile_image_name,
         ]);
     }
 }
