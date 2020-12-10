@@ -29,14 +29,7 @@
         main{
             overflow: auto;
             height: calc(100% - 75px);
-            /* min-height: calc(100vh - 60px); */
-            background-image: url('/images/resources_images/logo_real.png');
-            background-attachment: fixed;
-            background-size: 450px;
-            background-position: center;
-            background-repeat: no-repeat;
-            /* font-family: 'Exo 2', sans-serif; */
-            /* padding-bottom: 60px; */
+            
             background-color: whitesmoke;
         }
         .navbar-nav .active{
